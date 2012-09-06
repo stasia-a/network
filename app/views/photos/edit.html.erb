@@ -1,0 +1,12 @@
+
+<%= form_for [@user,@photo ] do |f|%>
+<%= image_tag @photo.avatar.url(:thumb)%>
+
+<%= f.label :title%>
+<%= f.text_field :title %>
+
+<%= f.label :comments %>
+<%= f.text_area :comments %>
+
+<%= f.submit "Save", class: "btn btn-large btn-primary"%>
+<% end %>

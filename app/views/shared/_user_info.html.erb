@@ -1,0 +1,16 @@
+<a href="<%= user_path(@user) %>">
+  <%= image_tag @user.profile.avatar.url(:thumb), :class => "avatar" %>
+</a>
+<h3>
+  <%= @user.email %>
+</h3>
+<span>
+  <%= link_to "View my profile", user_profile_path(@user) %>
+</span>
+<span>
+  <%= link_to "View my photos", user_photos_path(@user) %>
+</span>
+<span id="posts_count">
+  <%= pluralize(@user.posts.count, "post") %>
+</span>
+

@@ -1,0 +1,8 @@
+<%= form_for [@user,@user.posts.new], :remote => true  do |f| %>
+<div><%= f.hidden_field :user_id %> </div>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Compose new post..." %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

@@ -1,0 +1,3 @@
+$("#invite_friend_form").html("<%= escape_javascript(render('users/invite_friend')) %>")
+$("#friends").html('<%= @user.friends.count %>')
+

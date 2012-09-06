@@ -1,0 +1,5 @@
+<span id="status">
+<% unless @user.profile.status.empty? %>
+<%= wrap(@user.profile.status) %>
+<% end %>
+</span>

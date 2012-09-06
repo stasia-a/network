@@ -1,0 +1,16 @@
+<li id="<%= feed_item.id %>">
+<%=image_tag find_user(feed_item).profile.avatar.url(:to_wall) %>    
+    <span class="user">
+      <%= link_to find_user(feed_item).email, find_user(feed_item) %>
+    </span>
+    <span class="content"><%= wrap(feed_item.content) %></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+    </span>
+  <% if current_user?(feed_item.user) %>
+    <%= link_to "delete", [@user,feed_item], method: :delete,
+                                     data: { confirm: "Are you sure?" },
+                                     title: feed_item.content, :remote => true %>    
+  <% end %>
+</li>
+

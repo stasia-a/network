@@ -1,0 +1,13 @@
+<div class="row">
+  <aside class="span">
+    <section>
+       <% if @photos.any? %>
+        <div class="user_avatars">
+          <% @photos.each do |photo| %>
+            <%=link_to image_tag(photo.avatar.url(:thumb)) , user_photo_path(:user_id => @user.id, :id=> photo.id) %>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+  </aside>
+</div>

@@ -1,0 +1,29 @@
+<div class="row">
+  <aside class="span4">
+    <section>
+      <%= image_tag @user.profile.avatar.url(:thumb) %>
+      <h1><%= @user.email %></h1>
+      <span><%= link_to "view my profile", user_profile_path(@user) %></span>
+      <span><b>Posts:</b> <%= @user.posts.count %></span>
+    </section>
+    <section>
+      <%= render 'shared/friends' %>
+      <% if @users.any? %>
+        <div class="user_avatars">
+          <% @users.each do |user| %>
+            <%= image_tag user.profile.avatar.url(:to_wall) %>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+  </aside>
+  <div class="span8">
+    <h3><%= @title %></h3>
+    <% if @users.any? %>
+      <ul class="users">
+        <%= render @users %>
+      </ul>
+      <%= will_paginate %>
+    <% end %>
+  </div>
+</div>

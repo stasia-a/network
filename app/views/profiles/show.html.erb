@@ -1,0 +1,11 @@
+<h2>My Profile</h2>
+<div class="row">
+  <div class="span6 offset3">
+      <%= image_tag @user.profile.avatar.url(:thumb) %>
+  <p>First name: <%= @user.profile.first_name %></p>   
+  <p>Last name: <%= @user.profile.last_name %></p>  
+  <p>Nickname: <%= @user.profile.nickname %></p>
+  <p>Education: <%= @user.profile.education %></p>
+
+</div>
+</div>

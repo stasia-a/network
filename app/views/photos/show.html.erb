@@ -1,0 +1,12 @@
+<h3><%= @photo.title %></h3></br>
+
+<%= image_tag @photo.avatar.url(:normal)%>
+<p><%= @photo.comments %></p>
+
+<div><% if current_user?(@user) %>
+  <p> <%= link_to "delete", [@user, @photo], method: :delete,
+                                     data: { confirm: "Are you sure?" } %>    
+  |    
+  <%= link_to "edit", edit_user_photo_path(:id => @photo.id, :user_id => @user.id) %>
+  <% end %></p>
+</div>

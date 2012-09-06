@@ -1,0 +1,22 @@
+<div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/status'%>
+      </section>
+      <section>
+        <%= render 'shared/friends' %>
+      </section>
+      <section>
+       <div id="new_post"> <%= render 'shared/post_form' %></div>
+      </section>
+    </aside>
+  <div class="span8">
+    <%= render 'invite_friend_form' if user_signed_in? %> 
+      <h3>Posts Feed</h3>
+      <div id="feed"> <%= render 'shared/feed' %></div>
+  </div>
+</div>
+

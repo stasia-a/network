@@ -1,0 +1,17 @@
+<h1>Add new photo</h1>
+
+<div class="span4">
+ <%= form_for [@user,@photo] do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.text_area :comments, placeholder: "Put here comments..." %>
+
+<%= f.file_field :avatar%>
+
+<%= f.submit "Add this photo", class: "btn btn-large btn-primary" %>
+<% end %>
+
+</div>
+</div>
